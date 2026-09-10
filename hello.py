@@ -1,3 +1,3 @@
 print("Hello I am kiruba")
 print("This is my first Git project").py
-print("welcome")
+print("I am learning Git and GitHub")
