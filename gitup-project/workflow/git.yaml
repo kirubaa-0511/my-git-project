@@ -1,0 +1,22 @@
+name: Send Email on Merge to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "✅ Code merged to main branch!"
+          to: ${{ secrets.EMAIL_TO }}
+          from: GitHub Actions
+          body: "Un branch feature-lendhu main-ku merge aagiducci. Check pannunga: ${{ github.repository }}"
